@@ -1,25 +1,34 @@
 import 'Senamon.dart';
 
 class Entrenador {
-  String nombre;
-  String email;
-  DateTime fechaNacimiento;
-  int nivelExp;
-  int batallasGanadas;
+  String _nombre;
+  String _email;
+  String _fechaNacimiento;
+  int _nivelExp;
+  int _batallasGanadas;
   List<Senamon> senamonesCapturados = [];
 
-  Entrenador(this.nombre, this.email, this.fechaNacimiento, this.nivelExp, this.batallasGanadas){}
+  Entrenador(this._nombre, this._email, this._fechaNacimiento, this._nivelExp,
+      this._batallasGanadas) {}
 
-  void mostrarInformacion(){
-    print("Nombre: ${this.nombre}");
-    print("Email: ${this.email}");
-    print("Fecha de Nacimiento: ${this.fechaNacimiento}");
-    print("Nivel de Experiencia: ${this.nivelExp}");
-    print("Batallas Ganadas: ${this.batallasGanadas}");
+  void mostrarInformacion() {
+    print("Nombre: ${this._nombre}");
+    print("Email: ${this._email}");
+    print("Fecha de Nacimiento: ${this._fechaNacimiento}");
+    print("Nivel de Experiencia: ${this._nivelExp}");
+    print("Batallas Ganadas: ${this._batallasGanadas}");
+    print("Senamones Elegidos");
+    for (var i = 0; i < senamonesCapturados.length; i++) {
+      print("- ${senamonesCapturados[i].getNombre()}");
+    }
+  }
+
+  String getNombre() {
+    return _nombre;
   }
 
   void atraparSenamon(Senamon senamon) {
-    if(senamonesCapturados.length < 5){
+    if (senamonesCapturados.length < 5) {
       senamonesCapturados.add(senamon);
     } else {
       print('Ya tienes 5 senamones, si deseas, puedes reemplazarlos.');
@@ -27,21 +36,21 @@ class Entrenador {
   }
 
   void reemplazarSenamon(int posicion, Senamon nuevoSenamon) {
-    if(posicion >= 0 && posicion < senamonesCapturados.length) {
+    if (posicion >= 0 && posicion < senamonesCapturados.length) {
       senamonesCapturados[posicion] = nuevoSenamon;
     } else {
       print('La posicion que ha ingresado es invalida');
     }
   }
 
-  void entrenarSenamon(Senamon senamon, {int puntosAtaque = 0, int puntosSalud = 0}) {
-    int puntosRequeridos  = (puntosAtaque + puntosSalud) * 10;
-    if(nivelExp >= puntosRequeridos) {
-      senamon.nivelAtaque = senamon.nivelAtaque + puntosAtaque;
-      senamon.puntos_salud = senamon.puntos_salud + puntosSalud;
-      nivelExp = nivelExp - puntosRequeridos;
-    } else {
-      print('No tienes el nivel de experiencia necesario.');
+  void entrenarSenamon(List<Senamon> senamones) {
+    if (_nivelExp >= 200) {
+      print("Ingrese el senamon que desea entrenar");
+      print("*" * 100);
+      print("SENAMONES ELEGIDOS");
+      for (var i = 0; i < senamonesCapturados.length; i++) {
+        
+      }
     }
   }
 }
