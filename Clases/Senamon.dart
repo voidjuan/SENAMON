@@ -10,25 +10,58 @@ class Senamon{
 
   Senamon(this._nombre, this._nivel, this._tipoSenamon, this._salud, this._ataque, this._descripcion) {}
 
-  void recibirAtaque(int ataque){
-  _salud = _salud - ataque;
-  }
-
   String getNombre(){
     return _nombre;
+  }
+
+  int getSalud(){
+    return _salud;
+  }
+
+  int getAtaque(){
+    return _ataque;
+  }
+
+  String getTipoSenamon(){
+    return _tipoSenamon;
+  }
+
+  void setSalud(int nuevaSalud){
+    _salud = nuevaSalud;
+  }
+
+  void mostrarInformacion(){
+    print("""
+    Nombre: $_nombre
+    Nivel: $_nivel
+    Tipo de Senamon: $_tipoSenamon
+    Salud: $_salud
+    Ataque: $_ataque
+    Descripcion: $_descripcion
+    """);
   }
 
   void subirNivel(){
     int puntos = 20;
     print("Puntos Disponibles: $puntos");
     print("Ingrese el numero de puntos que desea agregar a la salud de $_nombre");
-    puntos -= validarRango(puntos, 0);
+    int salud = validarRango(puntos, 0);
     _salud += salud;
     puntos -= salud;
     print("Ingrese el numero de puntos que desea agregar al ataque de $_nombre");
+    int ataque = validarRango(puntos, 0);
     _ataque += ataque;
     puntos -= ataque;
     print("El senamon: $_nombre ha quedado con un ataque de: $_ataque y con una salud de $_salud");
+  }
+
+  void atacar(Senamon senamonEnemigo){
+    senamonEnemigo.setSalud(senamonEnemigo.getSalud() - _ataque);
+    if (senamonEnemigo.getSalud() <= 0){
+      senamonEnemigo.setSalud(0);
+      print("El senamon ${senamonEnemigo.getNombre()} ha muerto");
+    }
+    print("El senamon enemigo ${senamonEnemigo.getNombre()} ha quedado con una vida de: ${senamonEnemigo.getSalud()}");
   }
 }
 

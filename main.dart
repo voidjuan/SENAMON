@@ -1,8 +1,7 @@
 import 'dart:io';
-
-import 'Senamon.dart';
-import 'Entrenador.dart';
-import 'menu.dart';
+import 'Clases/Senamon.dart';
+import 'Clases/Entrenador.dart';
+import 'Clases/Menu.dart';
 
 void main(List<String> args) {
     List<Senamon> universo_senamon = [
@@ -31,11 +30,11 @@ void main(List<String> args) {
     List<Entrenador> entrenadores = [];
 
     //Creacion de entrenadores predeterminados
-    Entrenador entrenador1 = Entrenador("Dash", "dash12@email.com", "2005-06-03", 200, 0);
-    Entrenador entrenador2 = Entrenador("Ashley", "ashley-02@email.com", "2002-10-30", 200, 0);
+    Entrenador entrenador1 = Entrenador("Dash", "dash12@email.com", "2005-06-03", 200, 0, []);
+    Entrenador entrenador2 = Entrenador("Ashley", "ashley-02@email.com", "2002-10-30", 200, 0, []);
 
     print("MUNDO SENAMON");
-    print("*"*100);
+    print("-"*100);
     print("Quiere usar los entrenadores preedeterminados o quiere crear los entrenadores?");
     print("Si[s], No[n]");
     String tipoEntrenador = stdin.readLineSync()!;
@@ -51,22 +50,22 @@ void main(List<String> args) {
       entrenadores.add(entrenador2);
     } else {
       for(var i = 0; i < 2; i++) {
-        print("*"*100);
+        print("-"*100);
         print("ENTRENADOR ${i + 1}");
-        print("*"*100);
+        print("-"*100);
         print("Ingrese el nombre del entrenador");
         String nombre = stdin.readLineSync()!;
         print("Ingrese el email del entrenador");
         String email = stdin.readLineSync()!;
         print("Ingrese la fecha de nacimiento del entrenador");
         String fecha = stdin.readLineSync()!;
-        Entrenador entrenador = Entrenador(nombre, email, fecha, 200, 0);
+        Entrenador entrenador = Entrenador(nombre, email, fecha, 200, 0, []);
         entrenadores.add(entrenador);
       }
     }
 
     //Eleccion de los Senamones
-    print("*"*100);
+    print("-"*100);
     print("Ahora se eligiran los senamones de cada entrenador");
     for (var i = 0; i < entrenadores.length; i++) {
       print("Entrenador: ${entrenadores[i].getNombre()}");
@@ -102,18 +101,18 @@ void main(List<String> args) {
   //Se inicializa la clase menú para usar sus metodos
   Menu menu = Menu(0);
     do{
-      print("*"*100);
+      print("-"*100);
       print("MENU SENAMON");
       menu.elegirEntrenador(entrenadores);
       print("""
-    1. Ver informacion de un entrenador
-    2. Entrenar senamon
-    3. Crear nuevo senamon
-    4. Cambiar senamones elegidos
-    5. Ver informacion de un senamon
-    6. Batalla
-    7. Salir
-    """);
+        1. Ver informacion de un entrenador
+        2. Entrenar senamon
+        3. Crear nuevo senamon
+        4. Cambiar senamones elegidos
+        5. Ver informacion de un senamon
+        6. Batalla
+        7. Salir
+      """);
     opcion = int.parse(stdin.readLineSync()!);
     switch (opcion) {
       case 1:
@@ -121,19 +120,23 @@ void main(List<String> args) {
         break;
       
       case 2:
-      menu.en
+      menu.entrenarSenamon(entrenadores);
         break;
 
       case 3:
+      menu.crearSenamon(entrenadores, universo_senamon);
         break;
 
       case 4:
+        menu.cambiarSenamon(entrenadores, universo_senamon);
         break;
 
       case 5:
+        menu.mostrarInformacionSenamones(entrenadores, universo_senamon);
         break;
 
       case 6:
+        menu.juego(entrenadores);
         break;
 
       case 7:
