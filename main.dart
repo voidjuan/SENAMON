@@ -5,26 +5,27 @@ import 'Clases/Menu.dart';
 
 void main(List<String> args) {
     List<Senamon> universo_senamon = [
-      Senamon("Charmander", 1, "Fuego", 100, 25, "Senamon de fuego"),
-      Senamon("Pikachu", 1, "Electrico", 75, 50, "Senamon de Electricidad"),
-      Senamon("Bulbassaur", 1, "Hierva", 200, 35, "Senamon de Hierva"),
-      Senamon("Squirtle", 1, "Agua", 150, 30, "Senamon de Agua"),
-      Senamon("Charmander", 1, "Fuego", 100, 25, "Senamon de fuego"),
-      Senamon("Pikachu", 1, "Electrico", 75, 50, "Senamon de Electricidad"),
-      Senamon("Bulbassaur", 1, "Hierva", 200, 35, "Senamon de Hierva"),
-      Senamon("Squirtle", 1, "Agua", 150, 30, "Senamon de Agua"),
-      Senamon("Charmander", 1, "Fuego", 100, 25, "Senamon de fuego"),
-      Senamon("Pikachu", 1, "Electrico", 75, 50, "Senamon de Electricidad"),
-      Senamon("Bulbassaur", 1, "Hierva", 200, 35, "Senamon de Hierva"),
-      Senamon("Squirtle", 1, "Agua", 150, 30, "Senamon de Agua"),
-      Senamon("Charmander", 1, "Fuego", 100, 25, "Senamon de fuego"),
-      Senamon("Pikachu", 1, "Electrico", 75, 50, "Senamon de Electricidad"),
-      Senamon("Bulbassaur", 1, "Hierva", 200, 35, "Senamon de Hierva"),
-      Senamon("Squirtle", 1, "Agua", 150, 30, "Senamon de Agua"),
-      Senamon("Charmander", 1, "Fuego", 100, 25, "Senamon de fuego"),
-      Senamon("Pikachu", 1, "Electrico", 75, 50, "Senamon de Electricidad"),
-      Senamon("Bulbassaur", 1, "Hierva", 200, 35, "Senamon de Hierva"),
-      Senamon("Squirtle", 1, "Agua", 150, 30, "Senamon de Agua")
+  Senamon('Flameon'     , 1, "fuego",     200, 50, "Senamon de fuego"),
+  Senamon('Aquaon'      , 1, "agua",      200, 70, "Senamon de agua"),
+  Senamon("Charmander"  , 1, "fuego",     200, 70, "senamon de fuego"),
+  Senamon("Pikachu"     , 1, "electrico", 200, 75, "senamon electrico"),
+  Senamon("Bulbassaur"  , 1, "hierva",    200, 65, "senamon de hierva"),
+  Senamon("Tornadus"    , 1, "volador",   200, 55, "senamon de vuelo"),
+  Senamon("Slugma"      , 1, "fuego",     200, 60, "senamon de fuego"),
+  Senamon("Regieleki"   , 1, "electrico", 200, 90, "senamon electrico"),
+  Senamon("Virizion"    , 1, "hierva",    200, 95, "senamon de hierva"),
+  Senamon("Panpour"     , 1, "agua",      200, 55, "senamon de agua"),
+  Senamon("Rookidee"    , 1, "volador",   200, 70, "Senamon de Vuelo"),
+  Senamon("Entei"       , 1, "fuego",     200, 70, "Senamon de fuego"),
+  Senamon("Luxray"      , 1, "electrico", 200, 70, "Senamon de Electricidad"),
+  Senamon("Serperior"   , 1, "hierva",    200, 70, "Senamon de Hierva"),
+  Senamon("Greninja"    , 1, "agua",      200, 70, "Senamon de Agua"),
+  Senamon("Corviknight" , 1, "volador",   200, 70, "Senamon de Vuelo"),
+  Senamon("Braixen"     , 1, "fuego",     200, 70, "Senamon de fuego"),
+  Senamon("Toxel"       , 1, "electrico", 200, 70, "Senamon de Electricidad"),
+  Senamon("Tangela"     , 1, "hierva",    200, 70, "Senamon de Hierva"),
+  Senamon("Wailmer"     , 1, "agua",      200, 70, "Senamon de Agua"),
+  Senamon("Staraptor"   , 1, "volador",   200, 70, "Senamon de Vuelo")
     ];
 
     List<Entrenador> entrenadores = [];
