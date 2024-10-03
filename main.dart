@@ -38,15 +38,15 @@ void main(List<String> args) {
     print("-"*100);
     print("Quiere usar los entrenadores preedeterminados o quiere crear los entrenadores?");
     print("Si[s], No[n]");
-    String tipoEntrenador = stdin.readLineSync()!;
-    tipoEntrenador = tipoEntrenador.toLowerCase();
+    String tiposEntrenador = stdin.readLineSync()!;
+    tiposEntrenador = tiposEntrenador.toLowerCase();
     do {
-      if (tipoEntrenador != "s" && tipoEntrenador != "n") {
+      if (tiposEntrenador != "s" && tiposEntrenador != "n") {
         print("Ingrese una opcion correcta (s o n)");
-        tipoEntrenador = stdin.readLineSync()!;
+        tiposEntrenador = stdin.readLineSync()!;
       }
-    } while (tipoEntrenador != "s" && tipoEntrenador != "n");
-    if (tipoEntrenador == "s") {
+    } while (tiposEntrenador != "s" && tiposEntrenador != "n");
+    if (tiposEntrenador == "s") {
       entrenadores.add(entrenador1);
       entrenadores.add(entrenador2);
     } else {
