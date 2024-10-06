@@ -8,11 +8,11 @@ void main(List<String> args) {
   Senamon('Flameon'     , 1, "fuego",     200, 50, "Senamon de fuego"),
   Senamon('Aquaon'      , 1, "agua",      200, 70, "Senamon de agua"),
   Senamon("Charmander"  , 1, "fuego",     200, 70, "senamon de fuego"),
-  Senamon("Pikachu"     , 1, "electrico", 200, 75, "senamon electrico"),
+  Senamon("Pikachu"     , 1, "electrico", 200, 75, "senamon de Electricidad"),
   Senamon("Bulbassaur"  , 1, "hierva",    200, 65, "senamon de hierva"),
   Senamon("Tornadus"    , 1, "volador",   200, 55, "senamon de vuelo"),
   Senamon("Slugma"      , 1, "fuego",     200, 60, "senamon de fuego"),
-  Senamon("Regieleki"   , 1, "electrico", 200, 90, "senamon electrico"),
+  Senamon("Regieleki"   , 1, "electrico", 200, 90, "senamon de Electricidad"),
   Senamon("Virizion"    , 1, "hierva",    200, 95, "senamon de hierva"),
   Senamon("Panpour"     , 1, "agua",      200, 55, "senamon de agua"),
   Senamon("Rookidee"    , 1, "volador",   200, 70, "Senamon de Vuelo"),
@@ -98,6 +98,7 @@ void main(List<String> args) {
     6. Batalla
     7. Salir
     */
+
     int opcion;
   //Se inicializa la clase menú para usar sus metodos
   Menu menu = Menu(0);

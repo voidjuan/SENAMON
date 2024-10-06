@@ -6,11 +6,11 @@ import 'Menu.dart';
 class Juego {
   List<Entrenador> _entrenadores;
   List<Entrenador> _copiaEntrenadores;
-  int _pocisionEntrenador;
+  int _posicionEntrenador;
   int _pocisionEnemigo;
   bool _continuar;
 
-  Juego(this._entrenadores, this._copiaEntrenadores, this._pocisionEntrenador, this._pocisionEnemigo, this._continuar);
+  Juego(this._entrenadores, this._copiaEntrenadores, this._posicionEntrenador, this._pocisionEnemigo, this._continuar);
 
   void setEntrenadoresCopia(){
     for (var i = 0; i < _entrenadores.length; i++) {
@@ -35,8 +35,8 @@ class Juego {
     int elegido = random.nextInt(2);
     print("Ha salido ${CaraSello[elegido]}");
     print("Ha ganado el primer turno ${_copiaEntrenadores[elegido].getNombre()}");
-    _pocisionEntrenador = elegido;
-    if (_pocisionEntrenador == 0) {
+    _posicionEntrenador = elegido;
+    if (_posicionEntrenador == 0) {
       _pocisionEnemigo = 1;
     }else{
       _pocisionEnemigo = 0;
@@ -45,18 +45,18 @@ class Juego {
 
   void atacar(){
     print("*"*100);
-    print("Entrenador: ${_copiaEntrenadores[_pocisionEntrenador].getNombre()}");
+    print("Entrenador: ${_copiaEntrenadores[_posicionEntrenador].getNombre()}");
     print("Ingrese el Senamon con el que desea atacar");
-    for (var i = 0; i < _copiaEntrenadores[_pocisionEntrenador].senamonesCapturados.length; i++) {
-      print("${i + 1}. ${_copiaEntrenadores[_pocisionEntrenador].senamonesCapturados[i].getNombre()}. Vida: ${_copiaEntrenadores[_pocisionEntrenador].senamonesCapturados[i].getSalud()}");
+    for (var i = 0; i < _copiaEntrenadores[_posicionEntrenador].senamonesCapturados.length; i++) {
+      print("${i + 1}. ${_copiaEntrenadores[_posicionEntrenador].senamonesCapturados[i].getNombre()}. Vida: ${_copiaEntrenadores[_posicionEntrenador].senamonesCapturados[i].getSalud()}. Ataque: ${_copiaEntrenadores[_posicionEntrenador].senamonesCapturados[i].getAtaque()}");
     }
-    int pocisionSenamon = validarVida(_copiaEntrenadores[_pocisionEntrenador].senamonesCapturados);
+    int pocisionSenamon = validarVida(_copiaEntrenadores[_posicionEntrenador].senamonesCapturados);
     print("Ingrese el Senamon del enemigo al que desea atacar");
     for (var i = 0; i < _copiaEntrenadores[_pocisionEnemigo].senamonesCapturados.length; i++) {
       print("${i + 1}. ${_copiaEntrenadores[_pocisionEnemigo].senamonesCapturados[i].getNombre()}. Vida: ${_copiaEntrenadores[_pocisionEnemigo].senamonesCapturados[i].getSalud()}");
     }
     int pocisionSenamonEnemigo = validarVida(_copiaEntrenadores[_pocisionEnemigo].senamonesCapturados);
-    _copiaEntrenadores[_pocisionEntrenador].senamonesCapturados[pocisionSenamon].atacar(_copiaEntrenadores[_pocisionEnemigo].senamonesCapturados[pocisionSenamonEnemigo]);
+    _copiaEntrenadores[_posicionEntrenador].senamonesCapturados[pocisionSenamon].atacar(_copiaEntrenadores[_pocisionEnemigo].senamonesCapturados[pocisionSenamonEnemigo]);
   }
 
   int validarVida(List<Senamon> senamonesCapturados){
@@ -80,12 +80,12 @@ class Juego {
     if (contador >= 3) {
       _continuar = false;
     }else{
-      if (_pocisionEntrenador == 0) {
+      if (_posicionEntrenador == 0) {
         _pocisionEnemigo = 0;
-        _pocisionEntrenador = 1;
+        _posicionEntrenador = 1;
       }else{
         _pocisionEnemigo = 1;
-        _pocisionEntrenador = 0;
+        _posicionEntrenador = 0;
       }
     }
   }
@@ -95,7 +95,7 @@ class Juego {
   }
 
   int getPosicionEntrenador(){
-    return _pocisionEntrenador;
+    return _posicionEntrenador;
   }
 
 }

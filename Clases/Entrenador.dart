@@ -33,7 +33,7 @@ class Entrenador {
   }
 
   void setBatallasGanadas(){
-    _batallasGanadas ++;
+    _batallasGanadas++;
   }
 
   void mostrarInformacion() {
@@ -76,7 +76,7 @@ class Entrenador {
     for (var i = 0; i < universo_senamon.length; i++) {
       print("${i + 1}. ${universo_senamon[i].getNombre()}");
     }
-    print("Ingrese el numero del senamon que desea reemplazar por ${senamonesCapturados[posicion].getNombre()}");
+    print("Ingrese el numero del senamon que desea reemplazar por ${senamonesCapturados[posicion - 1].getNombre()}");
     int posicionReemplazo = validarPosicion(universo_senamon);
     universo_senamon.add(senamonesCapturados[posicion - 1]);
     senamonesCapturados.removeAt(posicion - 1);

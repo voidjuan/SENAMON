@@ -3,7 +3,7 @@ import 'dart:io';
 class Senamon{
   String _nombre;
   int _nivel;
-  String _tipoSenamon; // 'Fuego', 'Agua', 'Hierva', 'Volador', 'Electrico'
+  String _tipoSenamon; // 'Fuego', 'Agua', 'Hierva', 'Volador', 'Electricidad'
   int _salud;
   int _ataque;
   String _descripcion;

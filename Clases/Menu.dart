@@ -124,11 +124,11 @@ class Menu {
     juego.setCopiaSenamones();
     juego.lanzarMoneda();
     do {
-      juego.atacar;
+      juego.atacar();
       juego.terminarRonda();
     } while (juego.getContinuar());
     print("El entrenador ${entrenadores[juego.getPosicionEntrenador()].getNombre()} ha ganado esta partida");
-    entrenadores[juego.getPosicionEntrenador()].setBatallasGanadas;
+    entrenadores[juego.getPosicionEntrenador()].setBatallasGanadas();
     print("BATALLAS GANADAS: ${entrenadores[juego.getPosicionEntrenador()].getBatallasGanadas()}");
     entrenadores[juego.getPosicionEntrenador()].setNivelExp(100);
     print("El jugador ha obtenido 100 puntos de experiencia");
